@@ -15,12 +15,20 @@ const FullScreen = ({route}: any) => {
   };
   return (
     <View>
-      <Button title="setWallpaper" onPress={onPress} />
       <Image
         source={{uri: route.params.image}}
         resizeMode="cover"
         style={{width: width, height: height}}
       />
+      <View
+        style={{
+          position: 'absolute',
+          bottom: height / 9,
+          left: 0,
+          right: 0,
+        }}>
+        <Button title="setWallpaper" onPress={onPress} />
+      </View>
     </View>
   );
 };

@@ -17,7 +17,16 @@ import {
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 // import firestore from '@react-native-firebase/firestore';
 
-// import { AppOpenAd, InterstitialAd, RewardedAd, BannerAd, TestIds, BannerAdSize,useInterstitialAd, AdEventType } from 'react-native-google-mobile-ads';
+import {
+  AppOpenAd,
+  InterstitialAd,
+  RewardedAd,
+  BannerAd,
+  TestIds,
+  BannerAdSize,
+  useInterstitialAd,
+  AdEventType,
+} from 'react-native-google-mobile-ads';
 const {width, height} = Dimensions.get('screen');
 const Ads = 'ca-app-pub-1350477690991328/5191289648';
 // const interstitial = InterstitialAd.createForAdRequest(Ads, {
@@ -105,8 +114,11 @@ const HomePage = ({navigation}: any) => {
           justifyContent: 'center',
           position: 'relative',
         }}>
-        {/* <BannerAd size={BannerAdSize.BANNER} unitId="ca-app-pub-1350477690991328/2196470969" /> */}
-        {/* <BannerAd size={BannerAdSize.BANNER} unitId={TestIds.BANNER} />  */}
+        {/* <BannerAd
+          size={BannerAdSize.BANNER}
+          unitId="ca-app-pub-3940256099942544/9214589741"
+        />*/}
+        <BannerAd size={BannerAdSize.BANNER} unitId={TestIds.ADAPTIVE_BANNER} />
       </View>
       <FlatList
         data={users}

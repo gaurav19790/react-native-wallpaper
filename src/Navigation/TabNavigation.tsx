@@ -2,7 +2,12 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {HomeScreen, SetttingScreen, LovedScreen} from '../Screens';
+import {
+  HomeScreen,
+  SetttingScreen,
+  LovedScreen,
+  ScrollScreen,
+} from '../Screens';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
@@ -23,6 +28,18 @@ const TabNavigation = () => {
       />
       <Tab.Screen
         options={{
+          title: 'Home',
+          tabBarShowLabel: false,
+          headerShown: false,
+          tabBarIcon: ({focused}) => (
+            <Icon name="home" size={30} color={focused ? 'black' : 'gray'} />
+          ),
+        }}
+        name="scroll"
+        component={ScrollScreen}
+      />
+      {/* <Tab.Screen
+        options={{
           title: 'heart',
           tabBarShowLabel: false,
           headerShown: false,
@@ -32,7 +49,7 @@ const TabNavigation = () => {
         }}
         name="heart"
         component={LovedScreen}
-      />
+      /> */}
       <Tab.Screen
         options={{
           title: 'Setting',
